@@ -52,12 +52,12 @@ int main() {
     }
 
 
-	int maxFrameSize = 1;
-	int max_i = 0, max_j = 0;
+    int maxFrameSize = 1;
+    int max_i = 0, max_j = 0;
 
-	int frameSize = 2;
-	for (int i = 0; i < n - frameSize + 1; i++) {
-		for (int j = 0; j < n - frameSize + 1; j++) {
+    int frameSize = 2;
+    for (int i = 0; i < n - frameSize + 1; i++) {
+        for (int j = 0; j < n - frameSize + 1; j++) {
 
             while ( ( frameSize <= (n - max(i, j)) ) &&
                 ( (sum_of_submatrix(matrix, i, j, frameSize) == 0) ||
@@ -69,14 +69,14 @@ int main() {
 
                 frameSize++;
             }
-		}
-	}
+        }
+    }
 
 
-	cout << endl;
-	wcout << L"Индексы границ найденной субматрицы (строка, столбец):" << endl;
-	wcout << L"начало " << max_i << ' ' << max_j << endl;
-	wcout << L"конец  " << max_i + maxFrameSize - 1 << ' ' << max_j + maxFrameSize - 1 << endl;
+    cout << endl;
+    wcout << L"Индексы границ найденной субматрицы (строка, столбец):" << endl;
+    wcout << L"начало " << max_i << ' ' << max_j << endl;
+    wcout << L"конец  " << max_i + maxFrameSize - 1 << ' ' << max_j + maxFrameSize - 1 << endl;
 
 
     cout << endl;
@@ -94,18 +94,18 @@ int main() {
     }
 
 
-	fi.close();
+    fi.close();
 
     return 0;
 }
 
 int sum_of_submatrix(vector< vector<int> > a, int i_, int j_, int frameSize) {
 
-	int sum = 0;
+    int sum = 0;
 
-	for (int i = i_; i < frameSize + i_; i++)
-		for (int j = j_; j < frameSize + j_; j++)
-			sum += a[i][j];
+    for (int i = i_; i < frameSize + i_; i++)
+        for (int j = j_; j < frameSize + j_; j++)
+            sum += a[i][j];
 
-	return sum;
+    return sum;
 }
